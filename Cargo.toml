@@ -1,0 +1,14 @@
+[package]
+name = "hash_audit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+ethers = "2.0" # Para trabajar con Ethereum.
+reqwest = { version = "0.12", features = ["json"] } # Para llamadas HTTP.
+serde = { version = "1.0", features = ["derive"] } # Para serialización JSON.
+serde_json = "1.0" # Para serialización JSON.
+tokio = { version = "1", features = ["full"] } # Soporte asincrónico.
+dialoguer = "0.11" # Para entrada interactiva.
+
