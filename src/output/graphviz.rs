@@ -8,6 +8,10 @@ pub fn generate_graphviz_dot(
 ) -> Result<(), Box<dyn std::error::Error>> {
     let mut file = File::create(output_file)?;
     writeln!(file, "digraph ContractInteractions {{")?;
+    writeln!(file, "    rankdir=TB;")?;
+    writeln!(file, "    size=\"10,10\";")?;
+    writeln!(file, "    node [shape=box, fontsize=10];")?; // Configuración para los nodos
+    writeln!(file, "    edge [fontsize=8];")?;            // Configuración para las aristas
     for interaction in interactions {
         let from = interaction.from.to_string();
         let to = interaction.to.to_string();
